@@ -1,22 +1,21 @@
-//from shared/ItemForm.js
-
+//from shared/PlanForm.js
 import React from 'react';
 import { useState, useEffect } from 'react';
 import {  useParams,NavLink, useNavigate } from "react-router-dom";
 import axios from 'axios'
 import Layout from '../shared/Layout';
-import ItemForm from '../shared/ItemForm';
+import PlanForm from '../shared/PlanForm';
 
-
-
-const ItemEdit = () => {
+const PlanEdit = () => {
     const navigate = useNavigate();
     const { id } = useParams() // get the id from the current object
 
-    const [item, setItem] = useState({
+    const [plan, setPlan] = useState({
         // we need the following depending on what we get from api
-        title: '',
-        link : ''
+        date: '',
+        time: '',
+        plan:'',
+        status:'',
     })
 
     const [updated, setUpdated] = useState(false);
@@ -24,9 +23,9 @@ const ItemEdit = () => {
     useEffect(()=>{
         const fetchData = async () => {
         try {
-            const response = await axios.get(`http://localhost:3000/api/items/${id}`)
-             console.log ('itemEdit', response.data.item)
-             setItem(response.data.item)
+            const response = await axios.get(`http://localhost:3000/api/plans/${id}`)
+             console.log ('planEdit', response.data.plan)
+             setPlan(response.data.plan)
             
         } catch (error) {
             console.log(error)
@@ -40,9 +39,9 @@ const ItemEdit = () => {
         const updatedField = { [event.target.name] : event.target.value } //from name, and defaultValue from ItemForm.js
         // use the following to update the key value pairs
         //assigned the empty state with the updatedField into one object
-        const editedItem = Object.assign(item, updatedField)
+        const editedPlan = Object.assign(plan, updatedField)
         // assigned the new object to be updated to the state
-        setItem(editedItem)
+        setPlan(editedPlan)
     }
 
     const handleSubmit = (event) => {
@@ -50,31 +49,31 @@ const ItemEdit = () => {
         // since we will be taking it to the database, we need axios
         //handle backend
         axios({
-            url:`http://localhost:3000/api/items/${id}`,
+            url:`http://localhost:3000/api/plans/${id}`,
             method : 'PUT',
-            data: item
+            data: plan
         }).then(()=>setUpdated(true)).catch(console.error)
     }
 
     useEffect (()=>{
         if (updated) {
-            return navigate (`/items/${id}`)
+            return navigate (`/plans/${id}`)
         }
     },[])
 
     return (
             <Layout>
-                <ItemForm
-                    item={item}
+                <PlanForm
+                    plan={plan}
                     handleChange={(e) => handleChange(e)}
                     handleSubmit={(e) => handleSubmit(e)}
-                    cancelPath={`/items/${id}`}        
+                    cancelPath={`/plans/${id}`}        
                 />
-                <h4> {item.title} </h4>
-                <p>Link: {item.link} </p>
+                <h4> {plan.plan} </h4>
+                <p>Link: {plan.status} </p>
             </Layout>  
     );
 };
-export default ItemEdit;
+export default PlanEdit;
 
 //refer to controllers/index.js/updatgeItem 

@@ -40,7 +40,7 @@ const getPlanById = async (req, res) => {
 const updatePlan = (req, res) => {
   try {
     const { id } = req.params;
-    Plan.findByIdAndUpdate(id, req.body, { new: true }, (err, item) => {
+    Plan.findByIdAndUpdate(id, req.body, { new: true }, (err, plan) => {
       if (err) {
         res.status(500).send(err);
       }
@@ -77,5 +77,5 @@ module.exports = {
   deletePlan,
 }
 
-//then set up routes and use the export modules
+//then set up routes/index.js and use the export modules
 

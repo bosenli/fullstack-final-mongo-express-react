@@ -3,28 +3,30 @@ import { useState, useEffect } from 'react';
 import {  useParams,NavLink, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import Layout from '../shared/Layout';
-import ItemForm from '../shared/ItemForm';
+import PlanForm from '../shared/PlanForm';
 
-const ItemCreate = () => {
+const PlanCreate = () => {
 
     const navigate = useNavigate();
 
-    const [item, setItem] = useState({
+    const [plan, setPlan] = useState({
         // we need the following depending on what we get from api
-        title: '',
-        link : ''
+        date: '',
+        time: '',
+        plan:'',
+        status:'',
     })
 
     // create useState with the following 
-    const [createdItem, setCreatedItem] = useState(null);
+    const [createdPlan, setCreatedPlan] = useState(null);
 
 
     const handleChange = (event) => {
         const updatedField = { [event.target.name] : event.target.value }
              // use the following to update the key value pairs
-        const editedItem = Object.assign(item, updatedField)
+        const editedPlan = Object.assign(plan, updatedField)
         // assigned the new object to be updated to the state
-        setItem(editedItem)
+        setPlan(editedPlan)
     }
 
     const handleSubmit = (event) => {
@@ -32,22 +34,22 @@ const ItemCreate = () => {
 
         // if the entry is created in the database, save the response data to the state
         axios({
-            url:`http://localhost:3000/api/items/`,
+            url:`http://localhost:3000/api/plans/`,
             method : 'POST',
-            data: item
-        }).then((res)=>setCreatedItem(res.data.item)).catch(console.error)
+            data: plan
+        }).then((res)=>setCreatedPlan(res.data.plan)).catch(console.error)
     }
 
     useEffect (()=>{
-        if (createdItem) {
-            return navigate (`/items`)
+        if (createdPlan) {
+            return navigate (`/plans`)
         }
-    },[createdItem, navigate])
+    },[createdPlan, navigate])
 
     return (
         <Layout>
-            <ItemForm
-            item={item}
+            <PlanForm
+            plan={plan}
             handleChange={(e) => handleChange(e)}
             handleSubmit={(e) => handleSubmit(e)}
             cancelPath='/' 
@@ -59,4 +61,4 @@ const ItemCreate = () => {
     );
 };
 
-export default ItemCreate;
+export default PlanCreate;

@@ -10,4 +10,4 @@ const Footer = () => {
 
 export default Footer;
 
-//then go to logical part: routes/items.js
+//then go to logical part: routes/plans.js

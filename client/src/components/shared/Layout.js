@@ -6,10 +6,10 @@ import React from 'react';
 const Layout = (props) => {
     return (
         <div>
-            <h1>Items App</h1>
-            <Nav/>
+            <h1>Plans App</h1>
+                <Nav/>
             {/* children of the components that is inside Home header h4 */}
-            {props.children} 
+                {props.children} 
 
             <Footer/>
         </div>

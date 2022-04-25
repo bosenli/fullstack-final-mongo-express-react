@@ -4,8 +4,8 @@ import axios from 'axios'
 import Layout from '../shared/Layout';
 // import { NavLink } from "react-router-dom";
 
-const Items = () => {
-    const [items, setItems] = useState({})
+const Plans = () => {
+    const [plans, setPlans] = useState({})
     // sets delete fxns
     const [deleted, setDeleted] = useState(false)
     let navigate = useNavigate();
@@ -32,11 +32,11 @@ const Items = () => {
         try {
             // the sequence for 
             //the URL link follows App.js
-            const response = await axios.get(`http://localhost:3000/api/items/${id}`)
+            const response = await axios.get(`http://localhost:3000/api/plans/${id}`)
             console.log('response',response)
-            const result = response.data.item
+            const result = response.data.plan
             console.log('res',result )
-            setItems(result)
+            setPlans(result)
             return result;
         } catch (error) {
             console.log(error)
@@ -46,16 +46,16 @@ const Items = () => {
     },[])//only mount on the first time
     
     useEffect(()=>{
-        if(!items) {//if no item
+        if(!plans) {//if no item
             return <p>Loading...</p>
         }
-    },[items])
+    },[plans])
 
 
 
     const destroy = ()=>{
         axios({
-            url: `http://localhost:3000/api/items/${id}`,
+            url: `http://localhost:3000/api/plans/${id}`,
             method: 'DELETE'
         }).then(()=> setDeleted(true)).catch(console.error)
     }
@@ -69,15 +69,17 @@ const Items = () => {
     return (
         <div>
             <Layout>
-                <h4>{items.title}</h4>
-                <p>LINK:{items.link}</p>
-                <button onClick={()=> destroy()}>Delete Item</button>
+                <p>Date: {plans.date}</p>
+                <p>Time: {plans.time}</p>
+                <p>Plan: {plans.plan}</p>
+                <p>Status: {plans.status}</p>
+                <button onClick={()=> destroy()}> Delete Plan </button>
 
-                 <NavLink to={`/items/${id}/edit`}>
-                     <button>Edit</button>
+                 <NavLink to={`/plans/${id}/edit`}>
+                     <button>Edit Plan</button>
                  </NavLink>
 
-                <NavLink to='/items'> Back to all items</NavLink>
+                <NavLink to='/plans'> Back to all plans</NavLink>
                 
             </Layout>
             
@@ -85,6 +87,6 @@ const Items = () => {
     );
 };
 
-export default Items;
+export default Plans;
 
 //then go to shared/ItemForms.js
