@@ -31,11 +31,12 @@ const Plans = () => {
     })
     return (
         <div>
-            <h4>plans</h4>
+            <h4>PLANS APP</h4>
             <ul>
             {/* plansData above */}
             {plansData} 
             </ul>
+            <NavLink to='/'> Back to HOME</NavLink>
         </div>
     );
 };

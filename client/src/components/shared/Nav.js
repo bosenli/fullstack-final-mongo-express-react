@@ -7,9 +7,9 @@ const Nav = () => {
     return (
         <nav>
             <NavLink to="/">HOME</NavLink>
-            <br></br>
+            <br/>
             <NavLink to="/plans">PLANS</NavLink>
-            <br></br>
+            <br/>
             <NavLink to="/create-plan">CREATE PLAN</NavLink>
         </nav>
     );

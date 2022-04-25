@@ -15,7 +15,7 @@ const PlanEdit = () => {
         date: '',
         time: '',
         plan:'',
-        status:'',
+        status:'', 
     })
 
     const [updated, setUpdated] = useState(false);

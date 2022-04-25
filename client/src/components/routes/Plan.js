@@ -51,8 +51,6 @@ const Plans = () => {
         }
     },[plans])
 
-
-
     const destroy = ()=>{
         axios({
             url: `http://localhost:3000/api/plans/${id}`,

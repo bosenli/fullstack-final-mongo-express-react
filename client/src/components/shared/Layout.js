@@ -10,8 +10,8 @@ const Layout = (props) => {
                 <Nav/>
             {/* children of the components that is inside Home header h4 */}
                 {props.children} 
-
             <Footer/>
+            
         </div>
     );
 };
