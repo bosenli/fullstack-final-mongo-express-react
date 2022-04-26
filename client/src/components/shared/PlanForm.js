@@ -26,12 +26,23 @@ const PlanForm = ({ plan, handleSubmit, handleChange, cancelPath }) => {
         onChange={(e) => handleChange(e)}      
       />
 
-      <input
+      {/* <input
         placeholder="completed"
         defaultValue={plan.status}
         name="status"
         onChange={(e) => handleChange(e)}      
-      />
+      /> */}
+
+<label for ="status"> Choose a task status: </label>
+
+<select id= "status">
+  <option value="pending">pending</option>
+  <option value="pending">completed</option>
+  <option value="cancelled">cancelled</option>
+</select>
+
+      
+      
 
       <button type="submit" > Submit </button>
       {/* goto planEdit */}

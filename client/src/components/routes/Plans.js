@@ -3,6 +3,9 @@ import axios from 'axios'
 import { useState, useEffect } from 'react';
 //array of objects
 
+import Alert from 'react-bootstrap/Alert'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 const Plans = () => {
     const [plans, setPlans] = useState([]);
     
@@ -27,7 +30,18 @@ const Plans = () => {
     const plansData = plans.map((plan)=>{
         return  <li key={plan._id}>
                 <NavLink to={`/plans/${plan._id}`} >
-                    {plan.date} <br/> {plan.time} {plan.plan} {plan.status}
+                    {plan.date} <br/> 
+                    <div>
+                       <p>{plan.time}</p>
+                        {plan.plan} 
+                    </div>
+
+                    {
+                    plan.status === "pending"? <Alert variant="danger">{plan.status}</Alert> : 
+                    plan.status === "cancelled"? <Alert variant="secondary"> {plan.status} </Alert>: 
+                    plan.status === "completed"? <Alert variant="success"> {plan.status} </Alert>:
+                    <Alert variant="info">{plan.status} </Alert>
+                    }
                 </NavLink>
                 </li>
     })
@@ -39,7 +53,7 @@ const Plans = () => {
                 {/* plansData above */}
                     {plansData} 
                 </ul>
-            <NavLink to='/'> Back to HOME</NavLink>
+            {/* <NavLink to='/'> Back to HOME</NavLink> */}
         </div>
     );
 };
