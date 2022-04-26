@@ -25,10 +25,11 @@ const Plans = () => {
     // set a variable to map the items as below
 // to is sending it to , then goes to routes/index.js
     const plansData = plans.map((plan)=>{
-        return <li key={plan._id}>
-            <NavLink to={`/plans/${plan._id}`} >
-                {plan.date} <br/> {plan.time} {plan.plan} {plan.status}</NavLink>
-        </li>
+        return  <li key={plan._id}>
+                <NavLink to={`/plans/${plan._id}`} >
+                    {plan.date} <br/> {plan.time} {plan.plan} {plan.status}
+                </NavLink>
+                </li>
     })
     return (
         <div>

@@ -1,9 +1,13 @@
+import Button from 'react-bootstrap/Button'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+
 function LogoutButton(props) {
   
     return (
-      <button onClick={props.onClick} >
+      <Button onClick={props.onClick} >
         Logout
-      </button>
+      </Button>
     )
   }
   

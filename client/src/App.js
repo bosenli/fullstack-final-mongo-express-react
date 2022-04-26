@@ -37,3 +37,5 @@ function App() {
 export default App;
 
 //then go to Home.js
+
+//for login goto LoginControl.js

@@ -7,7 +7,7 @@ const Layout = (props) => {
     return (
         <div>
             <h1>Plans App</h1>
-                <Nav/>
+                {/* <Nav/> */}
             {/* children of the components that is inside Home header h4 */}
                 {props.children} 
             <Footer/>

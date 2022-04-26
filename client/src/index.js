@@ -22,7 +22,7 @@ import LoginControl from './components/LoginControl';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <LoginControl />
+      <LoginControl /> 
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
