@@ -1,8 +1,8 @@
 import GuestGreeting from "./GuestGreeting"
 import UserGreeting from "./UserGreeting"
 
-import App from "../App"
-import Footer from "./shared/Footer"
+import App from "../../App"
+import Footer from "../shared/Footer"
 
 // function Greeting() {
 //     if (isLoggedIn){ // conditional render different components

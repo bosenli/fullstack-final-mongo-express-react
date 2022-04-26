@@ -41,9 +41,6 @@ const PlanForm = ({ plan, handleSubmit, handleChange, cancelPath }) => {
   <option value="cancelled">cancelled</option>
 </select>
 
-      
-      
-
       <button type="submit" > Submit </button>
       {/* goto planEdit */}
       <Link to={cancelPath}>  

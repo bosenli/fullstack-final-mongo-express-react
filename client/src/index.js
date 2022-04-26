@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import LoginControl from './components/LoginControl';
+import LoginControl from './components/auth/LoginControl';
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(

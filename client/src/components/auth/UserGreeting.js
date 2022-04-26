@@ -1,4 +1,4 @@
-import Nav from './shared/Nav'
+import Nav from '../shared/Nav'
 
 function UserGreeting(){
     return (

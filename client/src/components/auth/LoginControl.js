@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import LogoutButton from './LogoutButton.js'
-import LoginButton from './LoginButton'
-import Greeting from './Greeting';
-
+import LogoutButton from './LogoutButton.js';
+import LoginButton from './LoginButton.js';
+import Greeting from './Greeting.js';
 
 function LoginControl() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)//start with false as logout first
@@ -25,6 +24,7 @@ function LoginControl() {
 
   return (
     <div>
+
       <Greeting isLoggedIn={isLoggedIn} />
       {button}
     </div>
