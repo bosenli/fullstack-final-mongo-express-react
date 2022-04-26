@@ -8,7 +8,7 @@ import PlanCreate from './components/routes/PlanCreate';
 import Plan from './components/routes/Plan';
 import PlanEdit from './components/routes/PlanEdit';
 
-import LoginControl from './components/LoginControl'; //login 
+//login starts from Greeting.js
 
 function App() {
   return (
