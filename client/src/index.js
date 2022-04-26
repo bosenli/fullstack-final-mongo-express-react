@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
+import LoginControl from './components/LoginControl';
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -21,7 +22,7 @@ import { BrowserRouter } from 'react-router-dom';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <LoginControl />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

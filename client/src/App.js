@@ -8,10 +8,13 @@ import PlanCreate from './components/routes/PlanCreate';
 import Plan from './components/routes/Plan';
 import PlanEdit from './components/routes/PlanEdit';
 
+import LoginControl from './components/LoginControl'; //login 
+
 function App() {
   return (
     <div className="App">
       {/*with complex, sometimes we need to access the history of the objects cloest Route match */}
+      
       <Routes>
           <Route path='/' element = { <Home/> }/>
           <Route path='/plans' element = { <Plans/> }/>

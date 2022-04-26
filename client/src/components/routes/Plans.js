@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import axios from 'axios'
 import { useState, useEffect } from 'react';
 //array of objects
+
 const Plans = () => {
     const [plans, setPlans] = useState([]);
     
@@ -32,10 +33,11 @@ const Plans = () => {
     return (
         <div>
             <h4>PLANS APP</h4>
-            <ul>
-            {/* plansData above */}
-            {plansData} 
-            </ul>
+
+                <ul>
+                {/* plansData above */}
+                    {plansData} 
+                </ul>
             <NavLink to='/'> Back to HOME</NavLink>
         </div>
     );
