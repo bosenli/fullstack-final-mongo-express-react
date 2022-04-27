@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import axios from 'axios'
 import { useState, useEffect } from 'react';
+import { Plan } from './Plan'
 //array of objects
 
 import Alert from 'react-bootstrap/Alert'
@@ -30,9 +31,9 @@ const Plans = () => {
     const plansData = plans.map((plan)=>{
         return  <li key={plan._id}>
                 <NavLink to={`/plans/${plan._id}`} >
-                    {plan.date} <br/> 
+                    {plan.date} <t/> {plan.time} <br/> 
                     <div>
-                       <p>{plan.time}</p>
+                       
                         {plan.plan} 
                     </div>
 
@@ -42,6 +43,7 @@ const Plans = () => {
                     plan.status === "completed"? <Alert variant="success"> {plan.status} </Alert>:
                     <Alert variant="info">{plan.status} </Alert>
                     }
+                     {/* <button onClick={()=> destroy()}> Delete Plan </button> */}
                 </NavLink>
                 </li>
     })

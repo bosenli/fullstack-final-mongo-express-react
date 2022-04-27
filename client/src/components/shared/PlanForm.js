@@ -35,7 +35,13 @@ const PlanForm = ({ plan, handleSubmit, handleChange, cancelPath }) => {
 
 <label for ="status"> Choose a task status: </label>
 
-<select id= "status">
+<select 
+className="input"
+required
+defaultValue={plan.status}
+name="status"
+onChange={(e) => handleChange(e)}
+>
   <option value="pending">pending</option>
   <option value="pending">completed</option>
   <option value="cancelled">cancelled</option>

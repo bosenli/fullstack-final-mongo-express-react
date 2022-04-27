@@ -4,7 +4,7 @@ import axios from 'axios'
 import Layout from '../shared/Layout';
 // import { NavLink } from "react-router-dom";
 
-const Plans = () => {
+const Plan = () => {
     const [plans, setPlans] = useState({})
     // sets delete fxns
     const [deleted, setDeleted] = useState(false)
@@ -85,6 +85,6 @@ const Plans = () => {
     );
 };
 
-export default Plans;
+export default Plan;
 
 //then go to shared/ItemForms.js

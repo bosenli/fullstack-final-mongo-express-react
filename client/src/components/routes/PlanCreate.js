@@ -22,7 +22,7 @@ const PlanCreate = () => {
 
 
     const handleChange = (event) => {
-        const updatedField = { [event.target.name] : event.target.value }
+        const updatedField = { [event.target.name] : event.target.value }  
              // use the following to update the key value pairs
         const editedPlan = Object.assign(plan, updatedField)
         // assigned the new object to be updated to the state

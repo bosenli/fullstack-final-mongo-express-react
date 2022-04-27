@@ -1,0 +1,19 @@
+.App{
+  background-color: rgb(193, 230, 179);
+}
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    
+  }
+
+  div.logButton {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+  }
+  
+  ul {
+    list-style: none;
+  }

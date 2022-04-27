@@ -2,12 +2,14 @@ import React from 'react';
 import { NavLink } from 'react-router-dom'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import "../style.css"
 
+// import "../App.css"
 const Nav = () => {
 
     //home page showing NavLink 
     return (
-        <nav>
+        <nav className='navbar'>
             <Breadcrumb>
             <Breadcrumb.Item><NavLink to="/">HOME</NavLink> </Breadcrumb.Item>
             <Breadcrumb.Item><NavLink to="/plans">PLANS</NavLink> </Breadcrumb.Item>
