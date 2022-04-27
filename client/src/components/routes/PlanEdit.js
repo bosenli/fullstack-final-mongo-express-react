@@ -69,8 +69,9 @@ const PlanEdit = () => {
                     handleSubmit={(e) => handleSubmit(e)}
                     cancelPath={`/plans/${id}`}        
                 />
+                <br/>
                 <h4> {plan.plan} </h4>
-                <p>Link: {plan.status} </p>
+                <p><i>Status update:</i> {plan.status} </p>
             </Layout>  
     );
 };

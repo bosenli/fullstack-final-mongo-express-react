@@ -29,9 +29,19 @@ const PlanCreate = () => {
         setPlan(editedPlan)
     }
 
+
+    const handleChangeSelect = (event) => {
+        console.log(event);
+        const updatedField = { name: event.target.value };
+        console.log(updatedField);
+        const editedPlan = Object.assign(plan, updatedField);
+        setPlan(editedPlan);
+      };
+
+
     const handleSubmit = (event) => {
         event.preventDefault();
-
+        console.log(event)
         // if the entry is created in the database, save the response data to the state
         axios({
             url:`http://localhost:3000/api/plans/`,
@@ -42,7 +52,7 @@ const PlanCreate = () => {
 
     useEffect (()=>{
         if (createdPlan) {
-            return navigate (`/plans`)
+            return navigate (`api/plans`)
         }
     },[createdPlan, navigate])
 
@@ -51,6 +61,7 @@ const PlanCreate = () => {
             <PlanForm
             plan={plan}
             handleChange={(e) => handleChange(e)}
+            handleChangeSelect={(e) => handleChangeSelect(e)}
             handleSubmit={(e) => handleSubmit(e)}
             cancelPath='/' 
             />

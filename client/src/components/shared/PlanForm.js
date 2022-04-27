@@ -4,7 +4,6 @@ const PlanForm = ({ plan, handleSubmit, handleChange, cancelPath }) => {
   return (
     <form onSubmit={handleSubmit}>
       <label> Plan </label>
-
       <input
         placeholder="date"
         defaultValue={plan.date}  //chanagible , not value , value wont change value
@@ -33,8 +32,7 @@ const PlanForm = ({ plan, handleSubmit, handleChange, cancelPath }) => {
         onChange={(e) => handleChange(e)}      
       /> */}
 
-<label for ="status"> Choose a task status: </label>
-
+{/* <label for ="status"> Choose status: </label> */}
 <select 
 className="input"
 required
@@ -42,8 +40,9 @@ defaultValue={plan.status}
 name="status"
 onChange={(e) => handleChange(e)}
 >
+  <option value="">Choose a status</option>
   <option value="pending">pending</option>
-  <option value="pending">completed</option>
+  <option value="completed">completed</option>
   <option value="cancelled">cancelled</option>
 </select>
 

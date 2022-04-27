@@ -49,7 +49,7 @@ const Plans = () => {
     })
     return (
         <div className="plans">
-            <h4>PLANS</h4>
+            <h4>MY PLANS</h4>
 
                 <ul>
                 {/* plansData above */}
