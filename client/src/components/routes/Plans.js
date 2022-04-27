@@ -48,8 +48,8 @@ const Plans = () => {
                 </li>
     })
     return (
-        <div>
-            <h4>PLANS APP</h4>
+        <div className="plans">
+            <h4>PLANS</h4>
 
                 <ul>
                 {/* plansData above */}

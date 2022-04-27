@@ -8,12 +8,28 @@
   }
 
   div.logButton {
+    display: flex;
+    justify-content: center;
     margin: auto;
     width: 50%;
-    border: 3px solid green;
+    border: 3px solid rgb(2, 181, 2);
     padding: 10px;
   }
   
   ul {
     list-style: none;
+  }
+
+  div h1{
+    text-align: center;
+  }
+
+  Button {
+    text-align: center;
+  }
+
+  .plans {
+    margin: auto;
+ 
+  padding: 5px;
   }

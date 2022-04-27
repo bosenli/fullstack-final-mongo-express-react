@@ -25,9 +25,9 @@ function LoginControl() {
 
   return (
     <div className='logButton'>
-
-      <Greeting isLoggedIn={isLoggedIn} />
-      <div className="logbutt"> {button} </div>
+      <div>{button}
+        <Greeting isLoggedIn={isLoggedIn} />
+      </div>
     </div>
   )
 }
