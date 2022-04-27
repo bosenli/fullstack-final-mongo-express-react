@@ -57,6 +57,7 @@ const PlanEdit = () => {
 
     useEffect (()=>{
         if (updated) {
+            console.log("edited")
             return navigate (`/plans/${id}`)
         }
     },[])

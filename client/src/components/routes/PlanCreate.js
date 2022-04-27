@@ -50,9 +50,17 @@ const PlanCreate = () => {
         }).then((res)=>setCreatedPlan(res.data.plan)).catch(console.error)
     }
 
+    // useEffect (()=>{
+    //     if (createdPlan) {
+    //         console.log("edited")
+    //         return navigate (`/plans`)
+    //     }
+    // },[createdPlan, navigate])
+
     useEffect (()=>{
         if (createdPlan) {
-            return navigate (`api/plans`)
+            console.log("edited")
+            return navigate (`/plans`)
         }
     },[createdPlan, navigate])
 
